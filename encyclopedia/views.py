@@ -10,9 +10,7 @@ def index(request):
 
 def slug(request, slug):
     if util.get_entry(slug) == None:
-        return render(request, "encyclopedia/slug.html", {
-            "slug": f"{slug} Not found Page 404"
-        })
+        return render(request, "404.html")
     else:
         return render(request, "encyclopedia/slug.html", {
             "slug": util.get_entry(slug),
